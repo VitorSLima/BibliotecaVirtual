@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="980.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="btnCancelaCadastro" fx:id="btnCancelarCadastro" layoutX="265.0" layoutY="480.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="cancelar" />
+      <Button id="btnConfirmaCadastro" fx:id="btnConfirmarCadastro" layoutX="160.0" layoutY="480.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="confirmar" />
+      <Text fill="WHITE" layoutX="87.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
+      <Text fill="WHITE" layoutX="95.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" />
+      <TextField id="txtNome" layoutX="160.0" layoutY="239.0" prefHeight="31.0" prefWidth="200.0" />
+      <TextField id="txtCpf" layoutX="160.0" layoutY="287.0" prefHeight="31.0" prefWidth="200.0" />
+      <Text fill="WHITE" layoutX="87.0" layoutY="357.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
+      <TextField id="txtEmail" layoutX="160.0" layoutY="336.0" prefHeight="31.0" prefWidth="200.0" />
+      <TextField id="txtTel" layoutX="160.0" layoutY="386.0" prefHeight="31.0" prefWidth="200.0" />
+      <Text fill="WHITE" layoutX="80.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Telefone" />
+      <TextField id="txtDataNasc" layoutX="160.0" layoutY="433.0" prefHeight="31.0" prefWidth="200.0" />
+      <Text fill="#fffbfb" layoutX="32.0" layoutY="454.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data Nascimento" />
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="185.0" layoutY="78.0">
+         <image>
+            <Image url="@../../../../../../Desktop/LP4/56ac3c67-6.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="780.0" layoutY="520.0">
+         <image>
+            <Image url="@../../../../../../Desktop/LP4/kisspng-photographic-film-cinema-logo-film-elements-5aa2a81feea846.6702562915206093119776.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

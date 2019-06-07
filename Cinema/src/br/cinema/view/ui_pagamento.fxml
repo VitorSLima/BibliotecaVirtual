@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.media.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="980.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button id="btnCancelaPgmt" layoutX="198.0" layoutY="366.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="cancelar" />
+      <Button id="btnConfirmaPgmt" layoutX="93.0" layoutY="366.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="ok" />
+      <MenuButton id="MenuPagamento" layoutX="93.0" layoutY="313.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="200.0" text="Forma de Pagamento">
+        <items>
+          <MenuItem id="menuDinheiro" mnemonicParsing="false" text="Dinheiro" />
+          <MenuItem id="menuCartao" mnemonicParsing="false" text="Cartão" />
+        </items>
+      </MenuButton>
+      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="118.0" layoutY="141.0">
+         <image>
+            <Image url="@../../../../../../Desktop/LP4/126241.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="250.0" fitWidth="250.0" layoutX="730.0" layoutY="470.0">
+         <image>
+            <Image url="@../../../../../../Desktop/LP4/kisspng-photographic-film-cinema-logo-film-elements-5aa2a81feea846.6702562915206093119776.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
