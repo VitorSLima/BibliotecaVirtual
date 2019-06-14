@@ -1,16 +1,19 @@
 package br.cinema.JPA;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
 public class Conexao {
-
-	EntityManagerFactory emf = null;
+	
+	
+	private EntityManager em = null;
+	final EntityManagerFactory emf = Persistence.createEntityManagerFactory("Cinema");
 
 //-----------------------------------------------------------------
 	public Conexao() {
-		if (emf == null) {
-		   emf = createEntity();
+		if (em == null) {
+		   em = emf.createEntityManager();
 		}else {
 			getEntity();
 		}
@@ -18,12 +21,6 @@ public class Conexao {
 
 //-----------------------------------------------------------------
 	public EntityManagerFactory getEntity() {
-		return emf;
-	}
-
-//-----------------------------------------------------------------
-	public EntityManagerFactory createEntity() {
-		emf = Persistence.createEntityManagerFactory("Cinema");
 		return emf;
 	}
 

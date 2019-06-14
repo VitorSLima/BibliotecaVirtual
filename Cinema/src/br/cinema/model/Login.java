@@ -1,6 +1,7 @@
 package br.cinema.model;
 
 public class Login {
+	private int id; 
 	private String usuario;
 	private String senha;
 
@@ -25,6 +26,13 @@ public class Login {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	public int getId() {
+		return id;
+	}
+
+	public void setId() {
+		this.id = id;
 	}
 
 }

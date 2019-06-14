@@ -1,8 +1,18 @@
 package br.cinema.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tb_filme")
 
 public class Filme {
+	@GeneratedValue
+	@Id
+	private int id;
 	private String titulo;
 	private Double duracao;
 	private String classificacao;
@@ -11,6 +21,8 @@ public class Filme {
 	
 //-----------------------------------------------------
 	
+protected Filme() {
+	}
 public Filme(String titulo, Double duracao, String classificacao, String genero, String resumo) {
 		super();
 		this.titulo = titulo;
@@ -54,7 +66,14 @@ public Filme(String titulo, Double duracao, String classificacao, String genero,
 	public void setResumo(String resumo) {
 		this.resumo = resumo;
 	}
+//-----------------------------------------------------
+	public int getId() {
+		return id;
+	}
 
+	public void setId() {
+		this.id = id;
+	}
 
 
 }

@@ -3,14 +3,18 @@ package br.cinema.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
+
+
+import br.cinema.DAO.ClienteDAO;
 import br.cinema.JPA.CinemaDAOException;
 import br.cinema.JPA.FabricaConexao;
+import br.cinema.model.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 
 public class LoginController {
 
@@ -57,6 +61,20 @@ public class LoginController {
 			e.printStackTrace();
 
 		}
+		
+		
 
+	}
+	@FXML
+	void close(MouseEvent event) {
+		System.exit(0);
+	}
+	
+	@FXML 
+	void criarConta(ActionEvent event){
+		Cliente conta = new Cliente();
+		conta.setTipoCliente(txtLogin.getText());
+		
+		ClienteDAO dao = new ClienteDAO();
 	}
 }

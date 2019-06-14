@@ -8,14 +8,14 @@ import javax.persistence.Persistence;
 
 import org.apache.log4j.Logger;
 
-import br.cinema.model.Cliente;
+import br.cinema.model.Login;
 
-public class ClienteDAO {
+public class LoginDAO {
 
-	public static Logger log = Logger.getLogger(ClienteDAO.class);
+	public static Logger log = Logger.getLogger(LoginDAO.class);
 	protected EntityManager em;
 
-	public ClienteDAO() {
+	public LoginDAO() {
 		em = getEntityManager();
 	}
 
@@ -29,39 +29,38 @@ public class ClienteDAO {
 		return em;
 	}
 
-	public void save(Cliente cliente) {
-		log.info("Salvando Cliente");
+	public void save(Login login) {
+		log.info("Salvando login");
 		try {
 			em.getTransaction().begin();
-			em.persist(cliente);
+			em.persist(login);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			// TODO: handle exception
-			log.error("Erro ao salvar o cliente" + e.getMessage());
-			em.getTransaction().rollback();
+			log.error("Erro ao fazer login" + e.getMessage());
 		} finally {
 			em.close();
 		}
 	}
 
-	public void atualizar(Cliente cliente) {
+	public void atualizar(Login login) {
 		em.getTransaction().begin();
-		em.merge(cliente);
+		em.merge(login);
 		em.getTransaction().commit();
 	}
 
-	public Cliente getById(final int id) {
-		return em.find(Cliente.class, id);
+	public Login getById(final int id) {
+		return em.find(Login.class, id);
 	}
 	
-	public void remover(Cliente cliente) {
+	public void remover(Login pessoa) {
 		em.getTransaction().begin();
-		Cliente cliRemover = getById(cliente.getId());
-		em.remove(cliRemover);
+		Login logRemover = getById(pessoa.getId());
+		em.remove(logRemover);
 		em.getTransaction().commit();
 	}
-	public List<Cliente> getAll(){
-		return em.createQuery("FROM" + Cliente.class.getName()).getResultList();
+	public List<Login> getAll(){
+		return em.createQuery("FROM" + Login.class.getName()).getResultList();
 		
 	}
 }

@@ -8,14 +8,13 @@ import javax.persistence.Persistence;
 
 import org.apache.log4j.Logger;
 
-import br.cinema.model.Cliente;
+import br.cinema.model.Filme;
 
-public class ClienteDAO {
-
-	public static Logger log = Logger.getLogger(ClienteDAO.class);
+public class FilmeDAO {
+	public static Logger log = Logger.getLogger(FilmeDAO.class);
 	protected EntityManager em;
 
-	public ClienteDAO() {
+	public FilmeDAO() {
 		em = getEntityManager();
 	}
 
@@ -29,39 +28,39 @@ public class ClienteDAO {
 		return em;
 	}
 
-	public void save(Cliente cliente) {
-		log.info("Salvando Cliente");
+	public void save(Filme filme) {
+		log.info("Salvando Filme");
 		try {
 			em.getTransaction().begin();
-			em.persist(cliente);
+			em.persist(filme);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			// TODO: handle exception
-			log.error("Erro ao salvar o cliente" + e.getMessage());
-			em.getTransaction().rollback();
+			log.error("Erro ao salvar o filme" + e.getMessage());
 		} finally {
 			em.close();
 		}
 	}
 
-	public void atualizar(Cliente cliente) {
+	public void atualizar(Filme filme) {
 		em.getTransaction().begin();
-		em.merge(cliente);
+		em.merge(filme);
 		em.getTransaction().commit();
 	}
 
-	public Cliente getById(final int id) {
-		return em.find(Cliente.class, id);
+	public Filme getById(final int id) {
+		return em.find(Filme.class, id);
 	}
-	
-	public void remover(Cliente cliente) {
+
+	public void remover(Filme filme) {
 		em.getTransaction().begin();
-		Cliente cliRemover = getById(cliente.getId());
-		em.remove(cliRemover);
+		Filme filRemover = getById(filme.getId());
+		em.remove(filRemover);
 		em.getTransaction().commit();
 	}
-	public List<Cliente> getAll(){
-		return em.createQuery("FROM" + Cliente.class.getName()).getResultList();
-		
+
+	public List<Filme> getAll() {
+		return em.createQuery("FROM" + Filme.class.getName()).getResultList();
+
 	}
 }

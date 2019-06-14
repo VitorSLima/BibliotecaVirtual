@@ -1,4 +1,4 @@
-package br.cinema.view;
+package br.cinema.controller;
 
 import java.io.IOException;
 

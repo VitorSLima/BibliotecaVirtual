@@ -2,12 +2,24 @@ package br.cinema.model;
 
 import java.util.Date;
 
-public class Funcionarios extends Pessoa {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tb_funcionarios")
+
+
+public class Funcionarios extends Pessoa {
+	
+	private int id;
 	private double salario;
 	private String funcao;
 	private Date dt_Admissao;
 	private String turno;
+
+	protected Funcionarios() {
+	}
 
 	public Funcionarios(String nome, String cpf, String fone, String endereco, Date dtNascimento, String email) {
 		super(nome, cpf, fone, endereco, dtNascimento, email);
@@ -55,5 +67,7 @@ public class Funcionarios extends Pessoa {
 	public void setTurno(String turno) {
 		this.turno = turno;
 	}
+//-------------------------------------------------------
+
 
 }

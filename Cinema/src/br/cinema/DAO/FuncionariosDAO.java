@@ -8,14 +8,13 @@ import javax.persistence.Persistence;
 
 import org.apache.log4j.Logger;
 
-import br.cinema.model.Cliente;
+import br.cinema.model.Funcionarios;
 
-public class ClienteDAO {
-
-	public static Logger log = Logger.getLogger(ClienteDAO.class);
+public class FuncionariosDAO {
+	public static Logger log = Logger.getLogger(FuncionariosDAO.class);
 	protected EntityManager em;
 
-	public ClienteDAO() {
+	public FuncionariosDAO() {
 		em = getEntityManager();
 	}
 
@@ -29,39 +28,39 @@ public class ClienteDAO {
 		return em;
 	}
 
-	public void save(Cliente cliente) {
-		log.info("Salvando Cliente");
+	public void save(Funcionarios func) {
+		log.info("Salvando Funcionario");
 		try {
 			em.getTransaction().begin();
-			em.persist(cliente);
+			em.persist(func);
 			em.getTransaction().commit();
 		} catch (Exception e) {
 			// TODO: handle exception
 			log.error("Erro ao salvar o cliente" + e.getMessage());
-			em.getTransaction().rollback();
 		} finally {
 			em.close();
 		}
 	}
 
-	public void atualizar(Cliente cliente) {
+	public void atualizar(Funcionarios func) {
 		em.getTransaction().begin();
-		em.merge(cliente);
+		em.merge(func);
 		em.getTransaction().commit();
 	}
 
-	public Cliente getById(final int id) {
-		return em.find(Cliente.class, id);
+	public Funcionarios getById(final int id) {
+		return em.find(Funcionarios.class, id);
 	}
 	
-	public void remover(Cliente cliente) {
+	public void remover(Funcionarios func) {
 		em.getTransaction().begin();
-		Cliente cliRemover = getById(cliente.getId());
-		em.remove(cliRemover);
+		Funcionarios fncRemover = getById(func.getId());
+		em.remove(fncRemover);
 		em.getTransaction().commit();
 	}
-	public List<Cliente> getAll(){
-		return em.createQuery("FROM" + Cliente.class.getName()).getResultList();
+	public List<Funcionarios> getAll(){
+		return em.createQuery("FROM" + Funcionarios.class.getName()).getResultList();
 		
 	}
+
 }
